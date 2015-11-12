@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>撕开名牌！约战校花！</title>
+<meta name="keywords" content="撕开名牌！约战校花！">
+<meta name="description" content="撕开名牌！约战校花！">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div class="loading" id="loading">
+	<div class="inner">
+		<p class="loading_img"></p>
+		<p class="loading_rate" id="loading_rate">0%</p>
+	</div>
+</div>
+<div class="wrap" style="display:none">
+	<div class="tit"><img src="images/t1.png"/></div>
+	<div class="tit2"><img src="images/t2.png"/></div>
+	<span class="up"><img src="images/up_icon.png"/></span>
+	<div id="belle">	
+		<img src=""/>	
+	</div>
+	<ul id="gown">	
+	</ul>
+	<div class="down">
+		<div class="down_txt clearfix">
+			<div class="logo">
+				<a style="display:block;" href="http://gdjh.vxinyou.com/shichang1"><img src="images/logo.png"/></a>
+			</div>
+			<div class="down_right">
+				<p> 我在游戏等你哟.^~^.</p>
+				<a id="down_btn" href="http://gdjh.vxinyou.com/shichang1">点击下载</a>
+			</div>
+		</div>
+	</div>
+	<a id="prize" href="javascript:void(0);" class="prize_btn">我的奖品</a>
+	<a id="explain" href="javascript:void(0);" class="explain_btn">活动说明</a>
+</div>
+
+<div id="expShow" class="pop">
+	<div class="pop_txt">
+		<a class="close" href="javascript:void(0);">关闭</a>
+		<h3>活动说明</h3>
+		<div class="exp_txt">
+			<p><em>1</em>活动时间：6月16日-6月26日</p>
+			<p><em>2</em>每人每天每个手机号最多可以参与3次抽奖活动,发现违规参与玩家取消活动参与资格；</p>
+			<p><em>3</em>如抽中实物奖品但未填写正确手机号码，将视为放弃奖励；</p>
+			<p><em>4</em>如抽中情侣套装内裤与抱枕等，客服会在五个工作日天内联系中奖用户拿取地址寄出礼品；</p>
+			<p><em>5</em>每个游戏账号仅限激活一个礼包。</p>	
+			<div class="z"> *本活动最终解释权归魔力时代官方所有</div>	
+		</div>		
+	</div>
+</div>
+
+<div id="PrizeShow" class="pop">
+	<div class="pop_txt">
+		<a class="close" href="javascript:void(0);">关闭</a>
+		<h3>我的奖品</h3>
+		<div class="prize_txt">
+			<p class="p_tit"><span class="t">时间</span><span class="p">奖品</span></p>
+			<div class="prize_list">
+				<ul id="prizeList"></ul>
+				<div class="page_btn">
+					<span class="page_box">
+						<a class="prev">上一页</a><span class="num"><span class="current_page">1</span></span><a class="next">下一页</a>
+					</span>
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>
+
+<a id="start" href="javascript:void(0);">继续开撕</a>
+
+<div id="result" class="pop">
+	<div class="pop_txt">
+		<a id="close2" href="javascript:void(0);">关闭</a>
+		<p class="point"></p>
+		<div class="prize_img"><img id="prize_img" src="images/prize_img.png"></div>
+		<div class="mytxt">
+			<div id="userImg"></div> <p class="myt"></p>
+		</div>
+		<div class="r_btn">
+			<a class="my_award" href="javascript:void(0);"><img src="images/b2.png" ></a>
+			<a class="again" href="javascript:void(0);"><img src="images/b1.png" ></a>
+		</div>
+		<div id="inputTel">
+			<p>人家还没有你的手机号呢，快点写给我啦~</p>
+			<div class="phone">
+				<a href="javascript:void(0);" id="submit">提交</a>
+				<input id="tel" type="text" placeholder="请输入手机号码">
+			</div>
+		</div>
+		<a id="share"><img src="images/b3.png" ></a>
+	</div>
+</div>
+
+<div id="sharePop" class="pop">	
+	<img onclick="document.getElementById('sharePop').style.display='';"  src="images/jd.png" >
+</div>
+
+<div id="End" class="pop">	
+	<div class="pop_txt">
+		<h4>今天撕得好累啊，明天继续来吧~</h4>
+		<a onclick="document.getElementById('End').style.display='';" href="javascript:;"><img src="images/b4.png"></a>
+	</div>
+</div>
+
+<script type="text/javascript" src="http://images.vxinyou.com/jsCommon/jquery-1.7.2.min.js"></script>
+<script>
+/*加载*/
+var load = document.getElementById('loading');
+var imgPath = 'http://gdjh.vxinyou.com/zt/yuezhan/images/';
+var loadingPage = (function () {
+    var imgSources = ['bg.jpg','b1.png','b2.png','b3.png','b4.png','explain.png','logo.png','jd.png','prize.png','prize_img.png','repeat.png','up_icon.png','r1.jpg','0/r.png','0/1.png','0/2.png','1/r.png','1/1.png','1/2.png','2/r.png','2/1.png','2/2.png','3/r.png','3/1.png','4/r.png','4/1.png'];
+    for (var i = 0; i < imgSources.length; i++) {
+        imgSources[i] = (imgPath + imgSources[i]);
+    };
+    var loadImage = function (path, callback) {
+        var img = new Image();
+        img.onload = function () {
+            img.onload = null;
+            callback(path);
+        }
+        img.src = path;
+    }
+
+    var imgLoader = function (imgs, callback) {
+        var len = imgs.length, i = 0;
+        while (imgs.length) {
+            loadImage(imgs.shift(), function (path) {
+                callback(path, ++i, len);
+            })
+        }
+    }
+    var rateNum = document.getElementById('loading_rate');
+    var percent = 0;
+    imgLoader(imgSources, function (path, curNum, total) {
+        percent = curNum / total;
+        rateNum.innerHTML = Math.floor(percent * 100) + '%';
+        if (percent == 1) {
+            setTimeout(function () {
+                $('#loading').css('display', 'none');
+                $('.wrap').css('display', 'block');
+            }, 500);
+        }
+    });
+})();  
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
